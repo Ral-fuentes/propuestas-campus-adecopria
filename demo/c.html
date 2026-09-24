@@ -5,45 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Demo · Opción C · Estudio AE</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="demo.css">
 <style>
-:root{--bg:#f8fafd;--surface:#ffffff;--text:#202124;--muted:#5f6368;--border:#dadce0;--border-strong:#c4c7c5;--pri:#1967d2;--pri-ink:#1967d2;--pri-text:#ffffff;
-  --chip-bg:#e8f0fe;--chip-text:#174ea6;--track:#eef1f4;--input-bg:#ffffff;--ok:#137333;--ok-bg:#e6f4ea;--warn:#a50e0e;--warn-bg:#fce8e6;--ai-bg:#feefc3;--ai-text:#3c2a00;
-  --radius:24px;--btn-radius:999px;--font-body:'Fira Sans',system-ui,sans-serif;--font-display:'Bricolage Grotesque',system-ui,sans-serif}
-.c-top{min-height:64px;display:flex;align-items:center;gap:16px;padding:0 24px;border-bottom:1px solid #dadce0;position:sticky;top:0;z-index:20;background:#ffffff}
-.c-brand{border:0;background:none;color:#202124;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;font-weight:700;cursor:pointer;padding:0}
-.c-top nav button{border:0;background:none;color:#5f6368;font-weight:600;padding:10px 12px;border-radius:10px;cursor:pointer}
-.c-top nav button.on{color:#174ea6;background:#e8f0fe}
-.c-right{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:12px;color:#5f6368}
-.c-right img{height:24px}
-.c-av{width:36px;height:36px;border-radius:50%;background:#e8f0fe;color:#174ea6;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
-.c-focus{min-height:calc(100vh - 64px);display:grid;grid-template-columns:92px minmax(0,1fr) 360px}
-.c-bar{display:flex;align-items:center;gap:14px;padding:0 24px;min-height:56px;border-bottom:1px solid #dadce0;grid-column:1/-1}
-.c-exit{border:0;background:none;color:#5f6368;font-weight:600;cursor:pointer;display:inline-flex;gap:6px;align-items:center;padding:0}
+/* Paleta FCE 2026: azul del programa + verde SENA; tipografía Work Sans (instructivo de imagen DSNFT-0001-FCE-2026) */
+:root{--bg:#f6f6f6;--surface:#ffffff;--text:#1d2125;--muted:#5b6570;--border:#e3e6ea;--border-strong:#b9c0c8;--pri:#0b51d7;--pri-ink:#0b51d7;--pri-text:#ffffff;
+  --chip-bg:#e7eefc;--chip-text:#0b3b9c;--track:#e9edf2;--input-bg:#ffffff;--ok:#007832;--ok-bg:#e9f6e2;--warn:#a50e0e;--warn-bg:#fce8e6;--ai-bg:#fdeaa8;--ai-text:#3c2a00;
+  --radius:24px;--btn-radius:999px;--font-body:'Work Sans',system-ui,sans-serif;--font-display:'Work Sans',system-ui,sans-serif}
+.dv-h1,.dv-h2{color:#00304d}
+.c-top{min-height:72px;display:flex;align-items:center;gap:18px;padding:0 24px;border-bottom:1px solid #e3e6ea;position:sticky;top:0;z-index:20;background:#ffffff}
+.c-brand{border:0;background:none;padding:0;cursor:pointer;display:flex}
+.c-brand img{height:40px;width:auto}
+.c-top nav button{border:0;background:none;color:#5b6570;font-weight:600;padding:10px 12px;border-radius:10px;cursor:pointer}
+.c-top nav button.on{color:#0b3b9c;background:#e7eefc}
+.c-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.c-right .sena{height:46px}.c-right .ade{height:34px}.c-right .gae{height:22px}
+.c-sep{width:1px;height:36px;background:#c9ced6}
+.c-av{width:36px;height:36px;border-radius:50%;background:#e7eefc;color:#0b3b9c;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.c-strip{position:sticky;bottom:0;z-index:15;display:flex;align-items:center;gap:14px;padding:8px 24px;background:#ffffff;border-top:1px solid #e3e6ea;font-size:12.5px;font-weight:600;line-height:1.35;color:#00304d}
+.c-strip .fc{height:18px}.c-strip .m25{height:30px;margin-left:auto}
+.c-focus{min-height:calc(100vh - 48px);display:grid;grid-template-columns:92px minmax(0,1fr) 360px}
+.c-bar{display:flex;align-items:center;gap:14px;padding:0 24px;min-height:64px;border-bottom:1px solid #e3e6ea;grid-column:1/-1;background:#ffffff}
+.c-bar .c-fce{height:34px}.c-bar .c-sena{height:42px}
+.c-exit{border:0;background:none;color:#5b6570;font-weight:600;cursor:pointer;display:inline-flex;gap:6px;align-items:center;padding:0}
 .c-exit svg{width:18px;height:18px}
 .c-seg{margin-left:auto;display:flex;gap:6px;align-items:center}
-.c-seg span{width:64px;height:8px;border-radius:4px;background:#eef1f4;overflow:hidden}
-.c-seg span i{display:block;height:100%;background:#1967d2;transition:width .4s}
-.c-rail{border-right:1px solid #dadce0;display:flex;flex-direction:column;align-items:center;gap:14px;padding:22px 0}
-.c-rail button{width:54px;height:54px;border-radius:16px;border:0;background:#f1f3f4;color:#80868b;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px}
-.c-rail button.ok{background:#1967d2;color:#ffffff}
-.c-rail button.cur{background:#e8f0fe;border:3px solid #1967d2;color:#174ea6}
+.c-seg span{width:64px;height:8px;border-radius:4px;background:#e9edf2;overflow:hidden}
+.c-seg span i{display:block;height:100%;background:#0b51d7;transition:width .4s}
+.c-rail{border-right:1px solid #e3e6ea;background:#ffffff;display:flex;flex-direction:column;align-items:center;gap:14px;padding:22px 0}
+.c-rail button{width:54px;height:54px;border-radius:16px;border:0;background:#eef1f4;color:#6b7480;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;font-weight:800;font-size:20px}
+.c-rail button.ok{background:#0b51d7;color:#ffffff}
+.c-rail button.cur{background:#e7eefc;border:3px solid #0b51d7;color:#0b3b9c}
 .c-rail button.book{margin-top:auto;color:#3c4043}
 .c-rail svg{width:22px;height:22px}
-.c-main{padding:28px 40px 140px;display:flex;flex-direction:column;gap:18px;min-width:0}
-.c-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#5f6368;font-size:14px}
-.c-main .dv-h1{font-size:clamp(28px,3.4vw,42px);letter-spacing:-1px}
-.c-nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px;padding-top:18px;border-top:1px solid #dadce0}
-.c-side{border-left:1px solid #dadce0;padding:22px;display:flex;flex-direction:column;gap:16px}
-.c-ai{background:#fef7e0;border-color:#f3dc9c}
+.c-main{padding:28px 40px 60px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.c-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#5b6570;font-size:14px}
+.c-main .dv-h1{font-size:clamp(28px,3.4vw,40px);letter-spacing:-1px}
+.c-nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px;padding-top:18px;border-top:1px solid #e3e6ea}
+.c-side{border-left:1px solid #e3e6ea;background:#ffffff;padding:22px;display:flex;flex-direction:column;gap:16px}
+.c-ai{background:#fff8dc;border-color:#f5dd8a}
 .c-ai .dv-h2{color:#5c3d00;display:inline-flex;gap:8px;align-items:center}
 .c-ai .dv-btn{background:transparent;border-color:#e0c26a;color:#5c3d00}
-.dv-player{background:#0b0c10;border:1px solid #dadce0}
+.dv-player{background:#03307c;border:1px solid #e3e6ea}
 .dv-cert-in h1,.dv-cert-in h2{color:#1d2125}
-@media (max-width:1100px){.c-focus{grid-template-columns:72px minmax(0,1fr)}.c-side{grid-column:2;border-left:0;padding:0 40px 140px}.c-main{padding-bottom:24px}.c-rail button{width:46px;height:46px}.c-right span,.c-right img{display:none}}
-@media (max-width:640px){.c-focus{grid-template-columns:1fr}.c-rail{flex-direction:row;justify-content:center;border-right:0;border-bottom:1px solid #dadce0;padding:12px}.c-rail button.book{margin:0}.c-side{grid-column:1;padding:0 20px 160px}.c-main{padding:22px 20px}.c-seg span{width:34px}}
-@media (max-width:640px){.c-top{padding:0 14px;gap:10px}.c-brand{font-size:17px}.c-bar{padding:0 14px;gap:10px}.c-bar>span{display:none}}
+@media (max-width:1100px){.c-focus{grid-template-columns:72px minmax(0,1fr)}.c-side{grid-column:2;border-left:0;padding:0 40px 60px}.c-main{padding-bottom:24px}.c-rail button{width:46px;height:46px}.c-right .gae{display:none}}
+@media (max-width:640px){.c-focus{grid-template-columns:1fr}.c-rail{flex-direction:row;justify-content:center;border-right:0;border-bottom:1px solid #e3e6ea;padding:12px}.c-rail button.book{margin:0}.c-side{grid-column:1;padding:0 20px 90px}.c-main{padding:22px 20px}.c-seg span{width:24px}}
+@media (max-width:640px){.c-top{padding:0 12px;gap:10px;min-height:60px}.c-brand img{height:28px}.c-right{gap:8px}.c-right .sena{height:34px}.c-right .ade{height:24px}.c-sep{height:26px}
+  .c-bar{padding:0 12px;gap:8px}.c-bar>span,.c-exit .t{display:none}.c-bar .c-fce{height:24px}.c-bar .c-sena{height:32px}
+  .c-strip{padding:6px 12px;font-size:11px}.c-strip .fc,.c-strip .m25,.c-strip .c-sep{display:none}}
 </style>
 </head>
 <body>
@@ -51,81 +60,89 @@
 <div id="dv-toast-host"></div>
 <template id="tpl-portada">
 
-<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 28px 40px; display: flex; flex-direction: column; gap: 20px; background: #f8fafd; color: #202124; font-family: 'Fira Sans', system-ui, sans-serif">
+<div style="width: 1440px; height: 900px; box-sizing: border-box; display: flex; flex-direction: column; background: #f6f6f6; color: #1d2125; font-family: 'Work Sans', system-ui, sans-serif">
 
-  <header style="display: flex; align-items: center; gap: 18px">
-    <div style="display: flex; align-items: center; gap: 12px; padding: 6px 12px; border-radius: 14px; background: #ffffff; border: 1px solid #dadce0">
-      <div style="width: 56px; height: 44px; border: 1.5px dashed #9aa0a6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #5f6368">[SENA]</div>
-      <div style="width: 140px; height: 40px; border: 1.5px dashed #9aa0a6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5f6368">[Logo ADECOPRIA]</div>
-    </div>
-    <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 700">Plataforma virtual</span>
-    <nav style="display: flex; gap: 26px; margin-left: 20px; font-size: 15px; font-weight: 500">
-      <a href="#" data-act="soon" style="color: #202124">Formaciones</a>
-      <a href="#" data-act="soon" style="color: #5f6368">Sesiones en vivo</a>
-      <a href="#" data-act="soon" style="color: #5f6368">Ayuda</a>
-    </nav>
-    <div style="margin-left: auto; display: flex; align-items: center; gap: 10px; padding: 8px 14px; border: 1px solid #c4c7c5; border-radius: 10px; font-size: 12px; color: #5f6368">
-      <span>Operado por</span>
-      <img src="../logo.png" alt="Grupo AE Advanced Education" style="height: 26px; width: auto">
+  <header style="height: 84px; flex: none; box-sizing: border-box; padding: 0 40px; display: flex; align-items: center; gap: 24px; background: #ffffff; border-bottom: 1px solid #e3e6ea">
+    <img src="../img/fce-lockup.jpg" alt="FCE · Formación Continua Especializada · Convocatoria DSNFT-0001-FCE-2026" style="height: 50px; width: auto">
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 22px">
+      <img src="../img/sena-logo.png" alt="SENA" style="height: 58px; width: auto">
+      <span style="width: 1px; height: 46px; background: #c9ced6"></span>
+      <img src="../img/adecopria-h.png" alt="ADECOPRIA · Asociación de Educación Privada" style="height: 44px; width: auto">
+      <img src="../img/gae-h.png" alt="Grupo AE Advanced Education" style="height: 30px; width: auto">
     </div>
   </header>
 
-  <div style="flex-grow: 1; min-height: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: minmax(0, 1.35fr) minmax(0, 1fr); gap: 16px">
+  <div style="flex-grow: 1; min-height: 0; box-sizing: border-box; padding: 20px 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px">
 
-    <section style="grid-column: span 8; box-sizing: border-box; padding: 40px 44px; border-radius: 28px; background: #ffffff; border: 1px solid #dadce0; display: flex; flex-direction: column; justify-content: space-between">
-      <div style="display: flex; align-items: center; gap: 16px"><div style="width: 340px; height: 52px; border: 1.5px dashed #9aa0a6; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #5f6368">[Sello FCE · Convocatoria DSNFT-0001-FCE-2026]</div><div style="display: flex; gap: 5px"><span style="width: 24px; height: 6px; border-radius: 3px; background: #4285f4"></span><span style="width: 24px; height: 6px; border-radius: 3px; background: #ea4335"></span><span style="width: 24px; height: 6px; border-radius: 3px; background: #fbbc04"></span><span style="width: 24px; height: 6px; border-radius: 3px; background: #34a853"></span></div></div>
-      <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 60px; line-height: 0.98; font-weight: 800; letter-spacing: -2px">Aprende enfocado.<br><span style="color: #1967d2">En vivo.</span> Con IA a tu lado.</h1>
-      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3c4043; max-width: 600px">Un módulo a la vez, sin distracciones. Clases por Meet, grabaciones siempre disponibles y un asistente que te resume y explica cada tema.</p>
-      <span style="display: inline-flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; font-weight: 600; color: #137333; max-width: 700px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M5 12l5 5L20 7"></path></svg>Formación gratuita: las acciones de formación de la convocatoria DSNFT-0001-FCE-2026 son gratuitas para los trabajadores beneficiarios. Cofinanciadas por el SENA.</span>
+    <section style="grid-column: span 8; position: relative; overflow: hidden; box-sizing: border-box; padding: 36px 44px; border-radius: 28px; background: linear-gradient(135deg, #0d62fe 0%, #0b51d7 45%, #03307c 100%); color: #ffffff; display: flex; flex-direction: column; justify-content: center; gap: 18px">
+      <span style="position: absolute; right: -90px; bottom: -150px; width: 420px; height: 420px; box-sizing: border-box; border-radius: 50%; border: 44px solid rgba(255, 255, 255, 0.1)"></span>
+      <div style="position: absolute; right: 44px; top: 50%; margin-top: -135px; width: 270px; height: 270px; box-sizing: border-box; border-radius: 50%; border: 10px solid #39a900; overflow: hidden; background: #ffffff">
+        <img src="../img/foto-estudiante.jpg" alt="Participante estudiando en el computador" style="width: 100%; height: 100%; object-fit: cover; object-position: 38% 30%; display: block">
+      </div>
+      <span style="position: relative; font-size: 14px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #cfe0ff">Plataforma virtual · ADECOPRIA</span>
+      <h1 style="position: relative; margin: 0; max-width: 560px; font-size: 50px; line-height: 1.04; font-weight: 800; letter-spacing: -1.4px">Aprende enfocado.<br><span style="background: #39a900; padding: 0 10px; border-radius: 6px; white-space: nowrap">En vivo.</span> Con IA<br>a tu lado.</h1>
+      <p style="position: relative; margin: 0; max-width: 520px; font-size: 17px; line-height: 1.55; color: #e3ecff">Un módulo a la vez, sin distracciones. Clases por Meet, grabaciones siempre disponibles y un asistente que te resume y explica cada tema.</p>
     </section>
 
-    <section style="grid-column: span 4; grid-row: span 2; box-sizing: border-box; padding: 36px 32px; border-radius: 28px; background: #ffffff; border: 1px solid #dadce0; color: #202124; display: flex; flex-direction: column; gap: 16px">
-      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -0.6px">Entra a tu estudio</span>
-      <span style="font-size: 15px; color: #5f6368; margin-top: -6px">Retoma justo donde lo dejaste.</span>
+    <section style="grid-column: span 4; grid-row: span 2; box-sizing: border-box; padding: 32px 30px; border-radius: 28px; background: #ffffff; border: 1px solid #e3e6ea; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-size: 28px; font-weight: 800; letter-spacing: -0.6px; color: #00304d">Entra a tu formación</span>
+      <span style="font-size: 15px; color: #5b6570; margin-top: -6px">Retoma justo donde lo dejaste.</span>
       <button type="button" data-act="google" style="height: 52px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #ffffff; border: 1px solid #747775; border-radius: 999px; font-family: inherit; font-size: 15.5px; font-weight: 600; color: #1f1f1f; cursor: pointer">
         <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
         Continuar con Google
       </button>
-      <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; color: #5f6368"><span style="flex-grow: 1; height: 1px; background: #cfd3da"></span>o<span style="flex-grow: 1; height: 1px; background: #cfd3da"></span></div>
-      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Número de documento
-        <input type="text" placeholder="Ej. 1023456789" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9bec7; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
+      <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; color: #5b6570"><span style="flex-grow: 1; height: 1px; background: #dde1e6"></span>o<span style="flex-grow: 1; height: 1px; background: #dde1e6"></span></div>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #00304d">Número de documento
+        <input type="text" placeholder="Ej. 1023456789" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9c0c8; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
       </label>
-      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Contraseña
-        <input type="password" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9bec7; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #00304d">Contraseña
+        <input type="password" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9c0c8; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
       </label>
-      <button type="button" data-act="login" style="height: 54px; border: none; border-radius: 999px; background: #1967d2; color: #ffffff; font-family: 'Bricolage Grotesque', sans-serif; font-size: 17px; font-weight: 700; cursor: pointer">Ingresar</button>
-      <a href="#" data-act="soon" style="align-self: center; font-size: 14px; font-weight: 600; color: #1967d2">¿Olvidaste tu contraseña?</a>
-      <p style="margin: auto 0 0; font-size: 12.5px; line-height: 1.5; color: #5f6368">En tu primer ingreso aceptarás la política de tratamiento de datos, la autorización de uso de imagen y la declaración de gratuidad.</p>
+      <button type="button" data-act="login" style="height: 54px; border: none; border-radius: 999px; background: #0b51d7; color: #ffffff; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">Ingresar</button>
+      <a href="#" data-act="soon" style="align-self: center; font-size: 14px; font-weight: 600">¿Olvidaste tu contraseña?</a>
+      <p style="margin: auto 0 0; font-size: 12.5px; line-height: 1.5; color: #5b6570">En tu primer ingreso aceptarás la política de tratamiento de datos, la autorización de uso de imagen y la declaración de gratuidad.</p>
     </section>
 
-    <section style="grid-column: span 3; box-sizing: border-box; padding: 24px; border-radius: 24px; background: #ffffff; border: 1px solid #dadce0; display: flex; flex-direction: column; gap: 14px">
-      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 19px; font-weight: 700">Un módulo a la vez</span>
+    <section style="grid-column: span 3; box-sizing: border-box; padding: 24px; border-radius: 24px; background: #ffffff; border: 1px solid #e3e6ea; display: flex; flex-direction: column; gap: 14px">
+      <span style="font-size: 19px; font-weight: 700; color: #00304d">Un módulo a la vez</span>
       <div style="display: flex; gap: 10px">
-        <span style="width: 44px; height: 44px; border-radius: 14px; background: #1967d2; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700">1</span>
-        <span style="width: 44px; height: 44px; box-sizing: border-box; border-radius: 14px; border: 2px solid #1967d2; color: #1967d2; display: flex; align-items: center; justify-content: center; font-weight: 700">2</span>
-        <span style="width: 44px; height: 44px; border-radius: 14px; background: #eef1f4; color: #80868b; display: flex; align-items: center; justify-content: center; font-weight: 700">3</span>
-        <span style="width: 44px; height: 44px; border-radius: 14px; background: #eef1f4; color: #80868b; display: flex; align-items: center; justify-content: center; font-weight: 700">4</span>
+        <span style="width: 44px; height: 44px; border-radius: 14px; background: #0b51d7; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700">1</span>
+        <span style="width: 44px; height: 44px; box-sizing: border-box; border-radius: 14px; border: 2px solid #0b51d7; color: #0b51d7; display: flex; align-items: center; justify-content: center; font-weight: 700">2</span>
+        <span style="width: 44px; height: 44px; border-radius: 14px; background: #e9edf2; color: #6b7480; display: flex; align-items: center; justify-content: center; font-weight: 700">3</span>
+        <span style="width: 44px; height: 44px; border-radius: 14px; background: #e9edf2; color: #6b7480; display: flex; align-items: center; justify-content: center; font-weight: 700">4</span>
       </div>
-      <span style="font-size: 14px; line-height: 1.5; color: #5f6368">Cada módulo se abre al terminar el anterior.</span>
+      <span style="font-size: 14px; line-height: 1.5; color: #5b6570">Cada módulo se abre al terminar el anterior.</span>
     </section>
 
-    <section style="grid-column: span 2; box-sizing: border-box; padding: 24px; border-radius: 24px; background: #1967d2; color: #ffffff; display: flex; flex-direction: column; justify-content: space-between">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"></rect><path d="M16 10l5-3v10l-5-3"></path></svg>
-      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800; line-height: 1.1; color: #ffffff">Clases en vivo por Meet</span>
+    <section style="grid-column: span 2; position: relative; overflow: hidden; box-sizing: border-box; border-radius: 24px; background: #03307c; color: #ffffff">
+      <img src="../img/foto-grupo.jpg" alt="Participantes en clase frente al computador" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 40%; display: block">
+      <div style="position: absolute; left: 0; right: 0; bottom: 0; box-sizing: border-box; padding: 18px; display: flex; flex-direction: column; gap: 8px; background: linear-gradient(180deg, rgba(3, 48, 124, 0) 0%, rgba(3, 48, 124, 0.92) 45%)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"></rect><path d="M16 10l5-3v10l-5-3"></path></svg>
+        <span style="font-size: 20px; font-weight: 800; line-height: 1.1">Clases en vivo por Meet</span>
+      </div>
     </section>
 
-    <section style="grid-column: span 3; box-sizing: border-box; padding: 24px; border-radius: 24px; background: #fef7e0; border: 1px solid #f3dc9c; display: flex; flex-direction: column; gap: 12px">
-      <span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 19px; font-weight: 700; color: #5c3d00"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Asistente con IA</span>
-      <span style="align-self: flex-end; max-width: 220px; padding: 10px 14px; border-radius: 16px 16px 4px 16px; background: #feefc3; font-size: 13.5px; line-height: 1.4; color: #3c2a00">Resúmeme el Módulo 2 en 5 ideas</span>
-      <span style="max-width: 240px; padding: 10px 14px; border-radius: 16px 16px 16px 4px; background: #eef1f4; font-size: 13.5px; line-height: 1.4; color: #3c4043">Claro. Estas son las ideas clave de [tema]…</span>
+    <section style="grid-column: span 3; box-sizing: border-box; padding: 24px; border-radius: 24px; background: #fff8dc; border: 1px solid #f5dd8a; display: flex; flex-direction: column; gap: 12px">
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 19px; font-weight: 700; color: #5c3d00"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Asistente con IA</span>
+      <span style="align-self: flex-end; max-width: 220px; padding: 10px 14px; border-radius: 16px 16px 4px 16px; background: #fdeaa8; font-size: 13.5px; line-height: 1.4; color: #3c2a00">Resúmeme el Módulo 2 en 5 ideas</span>
+      <span style="max-width: 240px; padding: 10px 14px; border-radius: 16px 16px 16px 4px; background: #ffffff; font-size: 13.5px; line-height: 1.4; color: #3c4043">Claro. Estas son las ideas clave de [tema]…</span>
     </section>
   </div>
 
-  <footer style="display: flex; align-items: center; gap: 26px; font-size: 13.5px; color: #5f6368">
-    <span style="font-weight: 600; color: #3c4043">Centro de Atención al Usuario · [correo CAU] · WhatsApp [número] · Lun a vie [horario] · Sáb [horario]</span>
-    <a href="#" data-act="soon" style="margin-left: auto">Política de datos</a>
-    <a href="#" data-act="soon">Manual de usuario</a>
-    <a href="#" data-act="soon">App móvil</a>
+  <footer style="flex: none; box-sizing: border-box; padding: 12px 40px 14px; background: #ffffff; border-top: 1px solid #e3e6ea; display: flex; flex-direction: column; gap: 8px">
+    <div style="display: flex; align-items: center; gap: 18px">
+      <img src="../img/formacion-continua.jpg" alt="#FORMACIÓNContinua" style="height: 26px; width: auto">
+      <span style="width: 1px; height: 30px; background: #c9ced6"></span>
+      <span style="font-size: 14px; font-weight: 600; line-height: 1.4; color: #00304d; max-width: 640px">Las acciones de formación ejecutadas en el marco de la convocatoria DSNFT-0001-FCE-2026 son gratuitas para los trabajadores beneficiarios.</span>
+      <img src="../img/mas25.jpg" alt="Más de 25 años" style="margin-left: auto; height: 44px; width: auto">
+    </div>
+    <div style="display: flex; align-items: center; gap: 22px; font-size: 12.5px; color: #5b6570; white-space: nowrap">
+      <span><b style="color: #00304d">CAU ADECOPRIA:</b> [correo CAU] · WhatsApp [número] · Lun a vie [horario] · Sáb [horario]</span>
+      <a href="#" data-act="soon" style="margin-left: auto">Política de datos</a>
+      <a href="#" data-act="soon">Manual de usuario</a>
+      <a href="#" data-act="soon">App móvil</a>
+    </div>
+    <span style="font-size: 12px; color: #5b6570"><b style="color: #00304d">SENA</b> · Grupo de Gestión para la Productividad y Competitividad · www.sena.edu.co · Contact Center Bogotá +(57) 601 736 60 60 · Línea gratuita 018000 91 02 70 · gfce@sena.edu.co · @SENAComunica</span>
   </footer>
 </div>
 </template>
@@ -133,9 +150,11 @@
 window.THEME = {
   id: 'c', name: 'Opción C · Estudio AE', activityView: 'curso', inlineAI: true, hideActNav: true,
   afterComplete: (m, a, c) => c.nextAfter({ m, a }),   // flujo continuo: siguiente lección
-  chrome: (c, inner) => c.S.view === 'curso' ? inner : `<header class="c-top"><span class="dv-ph">[SENA]</span><span class="dv-ph">[Logo ADECOPRIA]</span><button class="c-brand" data-act="go" data-to="inicio">Plataforma virtual</button>
+  chrome: (c, inner) => (c.S.view === 'curso' ? inner : `<header class="c-top"><button class="c-brand" data-act="go" data-to="inicio" aria-label="Ir a Mis formaciones"><img src="../img/fce-lockup.jpg" alt="FCE · Formación Continua Especializada · Convocatoria DSNFT-0001-FCE-2026"></button>
     <nav><button data-act="go" data-to="inicio" class="${c.S.view === 'inicio' ? 'on' : ''}">Mis formaciones</button><button data-act="soon">Ayuda</button></nav>
-    <div class="c-right"><span>Operado por</span><img src="../logo.png" alt="Grupo AE Advanced Education"><span class="c-av">${c.U.nombres[0]}${c.U.apellidos[0]}</span></div></header><main>${inner}</main>`,
+    <div class="c-right"><img class="sena" src="../img/sena-logo.png" alt="SENA"><span class="c-sep"></span><img class="ade" src="../img/adecopria-h.png" alt="ADECOPRIA"><img class="gae" src="../img/gae-h.png" alt="Grupo AE Advanced Education"><span class="c-av">${c.U.nombres[0]}${c.U.apellidos[0]}</span></div></header><main>${inner}</main>`)
+    // franja permanente exigida por el instructivo FCE 2026 (num. 3.1 A)
+    + `<footer class="c-strip"><img class="fc" src="../img/formacion-continua.jpg" alt="#FORMACIÓNContinua"><span class="c-sep"></span><span>Las acciones de formación ejecutadas en el marco de la convocatoria DSNFT-0001-FCE-2026 son gratuitas para los trabajadores beneficiarios.</span><img class="m25" src="../img/mas25.jpg" alt="Más de 25 años"></footer>`,
   views: {
     curso: c => {
       const { S, C, ICON } = c, pct = c.progress(), done = c.allDone();
@@ -150,8 +169,8 @@ window.THEME = {
           ${c.activity(cur.m, cur.a)}
           <div class="c-nav">${p ? `<button class="dv-btn" data-act="prev">${ICON.left} Anterior</button>` : ''}${n && c.isDone(cur.m, cur.a) ? `<button class="dv-btn dv-btn-pri" style="margin-left:auto" data-act="next">Siguiente lección ${ICON.right}</button>` : `<span class="dv-muted" style="margin-left:auto;font-size:14px">${c.isDone(cur.m, cur.a) ? '' : 'Completa esta lección para avanzar.'}</span>`}</div>`; }
       const ai = S.aiInline;
-      return `<div class="c-focus"><div class="c-bar"><button class="c-exit" data-act="go" data-to="inicio">${ICON.left} Salir del modo enfoque</button><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700">${C.name}</span>
-          <div class="c-seg" aria-label="Avance ${pct}%">${seg}<b style="margin-left:6px;color:#3c4043">${pct}%</b></div></div>
+      return `<div class="c-focus"><div class="c-bar"><button class="c-exit" data-act="go" data-to="inicio">${ICON.left}<span class="t">Salir del modo enfoque</span></button><img class="c-fce" src="../img/fce-lockup.jpg" alt="FCE · Formación Continua Especializada"><span style="font-weight:700;color:#00304d">${C.name}</span>
+          <div class="c-seg" aria-label="Avance ${pct}%">${seg}<b style="margin-left:6px;color:#00304d">${pct}%</b></div><img class="c-sena" src="../img/sena-logo.png" alt="SENA"></div>
         <nav class="c-rail" aria-label="Módulos">${rail}<button class="book" data-act="about" aria-label="Sobre la formación">${ICON.book}</button></nav>
         <main class="c-main">${main}</main>
         <aside class="c-side">
