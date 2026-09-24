@@ -26,11 +26,11 @@
 .c-strip .fc{height:18px}.c-strip .m25{height:30px;margin-left:auto}
 .c-focus{min-height:calc(100vh - 48px);display:grid;grid-template-columns:92px minmax(0,1fr) 360px}
 .c-bar{display:flex;align-items:center;gap:14px;padding:0 24px;min-height:64px;border-bottom:1px solid #e3e6ea;grid-column:1/-1;background:#ffffff}
-.c-bar .c-fce{height:34px}.c-bar .c-sena{height:42px}
+.c-bar .c-fce{height:34px}.c-name{font-weight:700;color:#00304d;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.c-logos{display:flex;align-items:center;gap:12px}.c-bar .c-sena{height:42px}.c-bar .ade{height:30px}.c-bar .gae{height:20px}
 .c-exit{border:0;background:none;color:#5b6570;font-weight:600;cursor:pointer;display:inline-flex;gap:6px;align-items:center;padding:0}
 .c-exit svg{width:18px;height:18px}
 .c-seg{margin-left:auto;display:flex;gap:6px;align-items:center}
-.c-seg span{width:64px;height:8px;border-radius:4px;background:#e9edf2;overflow:hidden}
+.c-seg span{width:48px;height:8px;border-radius:4px;background:#e9edf2;overflow:hidden}
 .c-seg span i{display:block;height:100%;background:#0b51d7;transition:width .4s}
 .c-rail{border-right:1px solid #e3e6ea;background:#ffffff;display:flex;flex-direction:column;align-items:center;gap:14px;padding:22px 0}
 .c-rail button{width:54px;height:54px;border-radius:16px;border:0;background:#eef1f4;color:#6b7480;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;font-weight:800;font-size:20px}
@@ -48,10 +48,11 @@
 .c-ai .dv-btn{background:transparent;border-color:#e0c26a;color:#5c3d00}
 .dv-player{background:#03307c;border:1px solid #e3e6ea}
 .dv-cert-in h1,.dv-cert-in h2{color:#1d2125}
-@media (max-width:1100px){.c-focus{grid-template-columns:72px minmax(0,1fr)}.c-side{grid-column:2;border-left:0;padding:0 40px 60px}.c-main{padding-bottom:24px}.c-rail button{width:46px;height:46px}.c-right .gae{display:none}}
+@media (max-width:1100px){.c-focus{grid-template-columns:72px minmax(0,1fr)}.c-side{grid-column:2;border-left:0;padding:0 40px 60px}.c-main{padding-bottom:24px}.c-rail button{width:46px;height:46px}.c-name{display:none}}
 @media (max-width:640px){.c-focus{grid-template-columns:1fr}.c-rail{flex-direction:row;justify-content:center;border-right:0;border-bottom:1px solid #e3e6ea;padding:12px}.c-rail button.book{margin:0}.c-side{grid-column:1;padding:0 20px 90px}.c-main{padding:22px 20px}.c-seg span{width:24px}}
 @media (max-width:640px){.c-top{padding:0 12px;gap:10px;min-height:60px}.c-brand img{height:28px}.c-right{gap:8px}.c-right .sena{height:34px}.c-right .ade{height:24px}.c-sep{height:26px}
-  .c-bar{padding:0 12px;gap:8px}.c-bar>span,.c-exit .t{display:none}.c-bar .c-fce{height:24px}.c-bar .c-sena{height:32px}
+  .c-top{flex-wrap:wrap;padding:8px 12px}.c-right{order:3;width:100%;margin-left:0}.c-right .gae{height:16px}.c-av{margin-left:auto}
+  .c-bar{flex-wrap:wrap;padding:8px 12px;gap:8px}.c-exit .t{display:none}.c-bar .c-fce{height:24px}.c-logos{order:3;width:100%;gap:10px}.c-bar .c-sena{height:30px}.c-bar .ade{height:22px}.c-bar .gae{height:15px}
   .c-strip{padding:6px 12px;font-size:11px}.c-strip .fc,.c-strip .m25,.c-strip .c-sep{display:none}}
 </style>
 </head>
@@ -60,90 +61,69 @@
 <div id="dv-toast-host"></div>
 <template id="tpl-portada">
 
-<div style="width: 1440px; height: 900px; box-sizing: border-box; display: flex; flex-direction: column; background: #f6f6f6; color: #1d2125; font-family: 'Work Sans', system-ui, sans-serif">
+<div style="width: 1440px; height: 810px; position: relative; overflow: hidden; box-sizing: border-box; background: #0450b8; color: #ffffff; font-family: 'Work Sans', system-ui, sans-serif">
 
-  <header style="height: 84px; flex: none; box-sizing: border-box; padding: 0 40px; display: flex; align-items: center; gap: 24px; background: #ffffff; border-bottom: 1px solid #e3e6ea">
-    <img src="../img/fce-lockup.jpg" alt="FCE · Formación Continua Especializada · Convocatoria DSNFT-0001-FCE-2026" style="height: 50px; width: auto">
-    <div style="margin-left: auto; display: flex; align-items: center; gap: 22px">
-      <img src="../img/sena-logo.png" alt="SENA" style="height: 58px; width: auto">
-      <span style="width: 1px; height: 46px; background: #c9ced6"></span>
-      <img src="../img/adecopria-h.png" alt="ADECOPRIA · Asociación de Educación Privada" style="height: 44px; width: auto">
-      <img src="../img/gae-h.png" alt="Grupo AE Advanced Education" style="height: 30px; width: auto">
-    </div>
-  </header>
+  <img src="../img/fondo-fce-azul.jpg" alt="" style="position: absolute; left: 0; top: 0; width: 1440px; height: 810px; display: block">
 
-  <div style="flex-grow: 1; min-height: 0; box-sizing: border-box; padding: 20px 40px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px">
-
-    <section style="grid-column: span 8; position: relative; overflow: hidden; box-sizing: border-box; padding: 36px 44px; border-radius: 28px; background: linear-gradient(135deg, #0d62fe 0%, #0b51d7 45%, #03307c 100%); color: #ffffff; display: flex; flex-direction: column; justify-content: center; gap: 18px">
-      <span style="position: absolute; right: -90px; bottom: -150px; width: 420px; height: 420px; box-sizing: border-box; border-radius: 50%; border: 44px solid rgba(255, 255, 255, 0.1)"></span>
-      <div style="position: absolute; right: 44px; top: 50%; margin-top: -135px; width: 270px; height: 270px; box-sizing: border-box; border-radius: 50%; border: 10px solid #39a900; overflow: hidden; background: #ffffff">
-        <img src="../img/foto-estudiante.jpg" alt="Participante estudiando en el computador" style="width: 100%; height: 100%; object-fit: cover; object-position: 38% 30%; display: block">
-      </div>
-      <span style="position: relative; font-size: 14px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #cfe0ff">Plataforma virtual · ADECOPRIA</span>
-      <h1 style="position: relative; margin: 0; max-width: 560px; font-size: 50px; line-height: 1.04; font-weight: 800; letter-spacing: -1.4px">Aprende enfocado.<br><span style="background: #39a900; padding: 0 10px; border-radius: 6px; white-space: nowrap">En vivo.</span> Con IA<br>a tu lado.</h1>
-      <p style="position: relative; margin: 0; max-width: 520px; font-size: 17px; line-height: 1.55; color: #e3ecff">Un módulo a la vez, sin distracciones. Clases por Meet, grabaciones siempre disponibles y un asistente que te resume y explica cada tema.</p>
-    </section>
-
-    <section style="grid-column: span 4; grid-row: span 2; box-sizing: border-box; padding: 32px 30px; border-radius: 28px; background: #ffffff; border: 1px solid #e3e6ea; display: flex; flex-direction: column; gap: 14px">
-      <span style="font-size: 28px; font-weight: 800; letter-spacing: -0.6px; color: #00304d">Entra a tu formación</span>
-      <span style="font-size: 15px; color: #5b6570; margin-top: -6px">Retoma justo donde lo dejaste.</span>
-      <button type="button" data-act="google" style="height: 52px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #ffffff; border: 1px solid #747775; border-radius: 999px; font-family: inherit; font-size: 15.5px; font-weight: 600; color: #1f1f1f; cursor: pointer">
-        <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
-        Continuar con Google
-      </button>
-      <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; color: #5b6570"><span style="flex-grow: 1; height: 1px; background: #dde1e6"></span>o<span style="flex-grow: 1; height: 1px; background: #dde1e6"></span></div>
-      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #00304d">Número de documento
-        <input type="text" placeholder="Ej. 1023456789" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9c0c8; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
-      </label>
-      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #00304d">Contraseña
-        <input type="password" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9c0c8; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
-      </label>
-      <button type="button" data-act="login" style="height: 54px; border: none; border-radius: 999px; background: #0b51d7; color: #ffffff; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">Ingresar</button>
-      <a href="#" data-act="soon" style="align-self: center; font-size: 14px; font-weight: 600">¿Olvidaste tu contraseña?</a>
-      <p style="margin: auto 0 0; font-size: 12.5px; line-height: 1.5; color: #5b6570">En tu primer ingreso aceptarás la política de tratamiento de datos, la autorización de uso de imagen y la declaración de gratuidad.</p>
-    </section>
-
-    <section style="grid-column: span 3; box-sizing: border-box; padding: 24px; border-radius: 24px; background: #ffffff; border: 1px solid #e3e6ea; display: flex; flex-direction: column; gap: 14px">
-      <span style="font-size: 19px; font-weight: 700; color: #00304d">Un módulo a la vez</span>
-      <div style="display: flex; gap: 10px">
-        <span style="width: 44px; height: 44px; border-radius: 14px; background: #0b51d7; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 700">1</span>
-        <span style="width: 44px; height: 44px; box-sizing: border-box; border-radius: 14px; border: 2px solid #0b51d7; color: #0b51d7; display: flex; align-items: center; justify-content: center; font-weight: 700">2</span>
-        <span style="width: 44px; height: 44px; border-radius: 14px; background: #e9edf2; color: #6b7480; display: flex; align-items: center; justify-content: center; font-weight: 700">3</span>
-        <span style="width: 44px; height: 44px; border-radius: 14px; background: #e9edf2; color: #6b7480; display: flex; align-items: center; justify-content: center; font-weight: 700">4</span>
-      </div>
-      <span style="font-size: 14px; line-height: 1.5; color: #5b6570">Cada módulo se abre al terminar el anterior.</span>
-    </section>
-
-    <section style="grid-column: span 2; position: relative; overflow: hidden; box-sizing: border-box; border-radius: 24px; background: #03307c; color: #ffffff">
-      <img src="../img/foto-grupo.jpg" alt="Participantes en clase frente al computador" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 40%; display: block">
-      <div style="position: absolute; left: 0; right: 0; bottom: 0; box-sizing: border-box; padding: 18px; display: flex; flex-direction: column; gap: 8px; background: linear-gradient(180deg, rgba(3, 48, 124, 0) 0%, rgba(3, 48, 124, 0.92) 45%)">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"></rect><path d="M16 10l5-3v10l-5-3"></path></svg>
-        <span style="font-size: 20px; font-weight: 800; line-height: 1.1">Clases en vivo por Meet</span>
-      </div>
-    </section>
-
-    <section style="grid-column: span 3; box-sizing: border-box; padding: 24px; border-radius: 24px; background: #fff8dc; border: 1px solid #f5dd8a; display: flex; flex-direction: column; gap: 12px">
-      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 19px; font-weight: 700; color: #5c3d00"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Asistente con IA</span>
-      <span style="align-self: flex-end; max-width: 220px; padding: 10px 14px; border-radius: 16px 16px 4px 16px; background: #fdeaa8; font-size: 13.5px; line-height: 1.4; color: #3c2a00">Resúmeme el Módulo 2 en 5 ideas</span>
-      <span style="max-width: 240px; padding: 10px 14px; border-radius: 16px 16px 16px 4px; background: #ffffff; font-size: 13.5px; line-height: 1.4; color: #3c4043">Claro. Estas son las ideas clave de [tema]…</span>
-    </section>
+  <div style="position: absolute; right: 30px; top: 16px; display: flex; align-items: center; gap: 18px">
+    <img src="../img/sena-logo-blanco.svg" alt="SENA" style="height: 66px; width: auto">
+    <span style="width: 1.5px; height: 58px; background: #ffffff"></span>
+    <img src="../img/adecopria-h-blanco.png" alt="ADECOPRIA · Asociación de Educación Privada" style="height: 40px; width: auto">
+    <img src="../img/gae-h-blanco.png" alt="Grupo AE Advanced Education" style="height: 26px; width: auto">
   </div>
 
-  <footer style="flex: none; box-sizing: border-box; padding: 12px 40px 14px; background: #ffffff; border-top: 1px solid #e3e6ea; display: flex; flex-direction: column; gap: 8px">
-    <div style="display: flex; align-items: center; gap: 18px">
-      <img src="../img/formacion-continua.jpg" alt="#FORMACIÓNContinua" style="height: 26px; width: auto">
-      <span style="width: 1px; height: 30px; background: #c9ced6"></span>
-      <span style="font-size: 14px; font-weight: 600; line-height: 1.4; color: #00304d; max-width: 640px">Las acciones de formación ejecutadas en el marco de la convocatoria DSNFT-0001-FCE-2026 son gratuitas para los trabajadores beneficiarios.</span>
-      <img src="../img/mas25.jpg" alt="Más de 25 años" style="margin-left: auto; height: 44px; width: auto">
+  <section style="position: absolute; left: 30px; top: 112px; width: 520px; display: flex; flex-direction: column; gap: 10px">
+    <span style="font-size: 15px; font-weight: 700; line-height: 1.35">DNSFT · Grupo de Gestión para la Productividad y Competitividad</span>
+    <h1 style="margin: 22px 0 0; font-size: 64px; line-height: 1; font-weight: 800; letter-spacing: -1.8px">Plataforma virtual</h1>
+    <span style="font-size: 20px; font-weight: 600; color: #d6e5ff">ADECOPRIA · Asociación de Educación Privada</span>
+
+    <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; gap: 14px" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"></path></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10 9.5v5l4.5-2.5z"></path></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10.5V17M8 7.5v.01M12 17v-6.5M12 13.5c0-2 1.2-3 2.6-3s2.4 1 2.4 3V17"></path></svg>
+      </div>
+      <span style="font-size: 16px; font-weight: 600; letter-spacing: 2px">[Redes de ADECOPRIA]</span>
+      <div style="margin-top: 10px; display: flex; gap: 14px" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6"></circle></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"></path></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"></path></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10 9.5v5l4.5-2.5z"></path></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10.5V17M8 7.5v.01M12 17v-6.5M12 13.5c0-2 1.2-3 2.6-3s2.4 1 2.4 3V17"></path></svg>
+      </div>
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: 4px">@SENAComunica</span>
+      <span style="font-size: 17px; font-weight: 700; letter-spacing: 4px">www.sena.edu.co</span>
     </div>
-    <div style="display: flex; align-items: center; gap: 22px; font-size: 12.5px; color: #5b6570; white-space: nowrap">
-      <span><b style="color: #00304d">CAU ADECOPRIA:</b> [correo CAU] · WhatsApp [número] · Lun a vie [horario] · Sáb [horario]</span>
-      <a href="#" data-act="soon" style="margin-left: auto">Política de datos</a>
-      <a href="#" data-act="soon">Manual de usuario</a>
-      <a href="#" data-act="soon">App móvil</a>
+
+    <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; line-height: 1.45; color: #e3ecff">
+      <span><b style="color: #ffffff">Centro de Atención al Usuario:</b> [correo CAU] · WhatsApp [número] · Lun a vie [horario] · Sáb [horario]</span>
+      <span style="display: flex; gap: 18px"><a href="#" data-act="soon" style="color: #ffffff; text-decoration: underline">Política de datos</a><a href="#" data-act="soon" style="color: #ffffff; text-decoration: underline">Manual de usuario</a><a href="#" data-act="soon" style="color: #ffffff; text-decoration: underline">App móvil</a></span>
     </div>
-    <span style="font-size: 12px; color: #5b6570"><b style="color: #00304d">SENA</b> · Grupo de Gestión para la Productividad y Competitividad · www.sena.edu.co · Contact Center Bogotá +(57) 601 736 60 60 · Línea gratuita 018000 91 02 70 · gfce@sena.edu.co · @SENAComunica</span>
-  </footer>
+  </section>
+
+  <div style="position: absolute; left: 590px; top: 200px; width: 330px; height: 330px; box-sizing: border-box; border-radius: 50%; border: 16px solid #ffffff; overflow: hidden; background: #ffffff">
+    <img src="../img/foto-estudiante.jpg" alt="Participante estudiando en el computador" style="width: 100%; height: 100%; object-fit: cover; object-position: 38% 30%; display: block">
+  </div>
+
+  <section style="position: absolute; left: 1000px; top: 112px; width: 380px; box-sizing: border-box; padding: 24px 26px; border-radius: 24px; background: #ffffff; color: #1d2125; display: flex; flex-direction: column; gap: 10px">
+    <span style="font-size: 24px; font-weight: 800; letter-spacing: -0.4px; color: #00304d">Ingresa a la plataforma</span>
+    <button type="button" data-act="google" style="height: 46px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #ffffff; border: 1px solid #747775; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 600; color: #1f1f1f; cursor: pointer">
+      <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
+      Continuar con Google
+    </button>
+    <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; color: #5b6570"><span style="flex-grow: 1; height: 1px; background: #dde1e6"></span>o<span style="flex-grow: 1; height: 1px; background: #dde1e6"></span></div>
+    <label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 600; color: #00304d">Número de documento
+      <input type="text" placeholder="Ej. 1023456789" style="height: 46px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9c0c8; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
+    </label>
+    <label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 600; color: #00304d">Contraseña
+      <input type="password" style="height: 46px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #b9c0c8; border-radius: 14px; font-family: inherit; font-size: 16px; background: #ffffff">
+    </label>
+    <button type="button" data-act="login" style="margin-top: 4px; height: 50px; border: none; border-radius: 999px; background: #0b51d7; color: #ffffff; font-family: inherit; font-size: 17px; font-weight: 700; cursor: pointer">Ingresar</button>
+    <a href="#" data-act="soon" style="align-self: center; font-size: 14px; font-weight: 600">¿Olvidaste tu contraseña?</a>
+    <p style="margin: 2px 0 0; font-size: 12px; line-height: 1.45; color: #5b6570">En tu primer ingreso aceptarás la política de tratamiento de datos, la autorización de uso de imagen y la declaración de gratuidad.</p>
+  </section>
 </div>
 </template>
 <script>
@@ -169,8 +149,8 @@ window.THEME = {
           ${c.activity(cur.m, cur.a)}
           <div class="c-nav">${p ? `<button class="dv-btn" data-act="prev">${ICON.left} Anterior</button>` : ''}${n && c.isDone(cur.m, cur.a) ? `<button class="dv-btn dv-btn-pri" style="margin-left:auto" data-act="next">Siguiente lección ${ICON.right}</button>` : `<span class="dv-muted" style="margin-left:auto;font-size:14px">${c.isDone(cur.m, cur.a) ? '' : 'Completa esta lección para avanzar.'}</span>`}</div>`; }
       const ai = S.aiInline;
-      return `<div class="c-focus"><div class="c-bar"><button class="c-exit" data-act="go" data-to="inicio">${ICON.left}<span class="t">Salir del modo enfoque</span></button><img class="c-fce" src="../img/fce-lockup.jpg" alt="FCE · Formación Continua Especializada"><span style="font-weight:700;color:#00304d">${C.name}</span>
-          <div class="c-seg" aria-label="Avance ${pct}%">${seg}<b style="margin-left:6px;color:#00304d">${pct}%</b></div><img class="c-sena" src="../img/sena-logo.png" alt="SENA"></div>
+      return `<div class="c-focus"><div class="c-bar"><button class="c-exit" data-act="go" data-to="inicio">${ICON.left}<span class="t">Salir del modo enfoque</span></button><img class="c-fce" src="../img/fce-lockup.jpg" alt="FCE · Formación Continua Especializada"><span class="c-name">${C.name}</span>
+          <div class="c-seg" aria-label="Avance ${pct}%">${seg}<b style="margin-left:6px;color:#00304d">${pct}%</b></div><span class="c-logos"><img class="c-sena" src="../img/sena-logo.png" alt="SENA"><span class="c-sep"></span><img class="ade" src="../img/adecopria-h.png" alt="ADECOPRIA"><img class="gae" src="../img/gae-h.png" alt="Grupo AE Advanced Education"></span></div>
         <nav class="c-rail" aria-label="Módulos">${rail}<button class="book" data-act="about" aria-label="Sobre la formación">${ICON.book}</button></nav>
         <main class="c-main">${main}</main>
         <aside class="c-side">

@@ -19,20 +19,25 @@ html,body{margin:0} #barra{position:sticky;top:0;z-index:10;height:48px;display:
 
 <div style="width: 1440px; height: 900px; box-sizing: border-box; display: flex; flex-direction: column; background: #f6f6f6; color: #1d2125; font-family: 'Work Sans', system-ui, sans-serif">
 
-  <header style="height: 72px; flex: none; box-sizing: border-box; padding: 0 32px; display: flex; align-items: center; gap: 20px; background: #ffffff; border-bottom: 1px solid #e3e6ea">
+  <header style="height: 72px; flex: none; box-sizing: border-box; padding: 0 28px; display: flex; align-items: center; gap: 18px; background: #ffffff; border-bottom: 1px solid #e3e6ea">
     <a href="#" style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #5b6570"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>Salir del modo enfoque</a>
     <img src="img/fce-lockup.jpg" alt="FCE · Formación Continua Especializada · Convocatoria DSNFT-0001-FCE-2026" style="height: 38px; width: auto">
-    <span style="font-size: 17px; font-weight: 700; color: #00304d">[Nombre de la acción de formación]</span>
+    <span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; font-weight: 700; color: #00304d">[Nombre de la acción de formación]</span>
     <div style="margin-left: auto; display: flex; align-items: center; gap: 12px">
       <div style="display: flex; gap: 6px">
-        <span style="width: 64px; height: 8px; border-radius: 4px; background: #0b51d7"></span>
-        <span style="width: 64px; height: 8px; border-radius: 4px; background: #d6e2fb"><span style="display: block; width: 60%; height: 8px; border-radius: 4px; background: #0b51d7"></span></span>
-        <span style="width: 64px; height: 8px; border-radius: 4px; background: #e9edf2"></span>
-        <span style="width: 64px; height: 8px; border-radius: 4px; background: #e9edf2"></span>
+        <span style="width: 44px; height: 8px; border-radius: 4px; background: #0b51d7"></span>
+        <span style="width: 44px; height: 8px; border-radius: 4px; background: #d6e2fb"><span style="display: block; width: 60%; height: 8px; border-radius: 4px; background: #0b51d7"></span></span>
+        <span style="width: 44px; height: 8px; border-radius: 4px; background: #e9edf2"></span>
+        <span style="width: 44px; height: 8px; border-radius: 4px; background: #e9edf2"></span>
       </div>
       <span style="font-size: 14px; font-weight: 700; color: #00304d">38%</span>
     </div>
-    <img src="img/sena-logo.png" alt="SENA" style="height: 48px; width: auto">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <img src="img/sena-logo.png" alt="SENA" style="height: 48px; width: auto">
+      <span style="width: 1px; height: 40px; background: #c9ced6"></span>
+      <img src="img/adecopria-h.png" alt="ADECOPRIA · Asociación de Educación Privada" style="height: 36px; width: auto">
+      <img src="img/gae-h.png" alt="Grupo AE Advanced Education" style="height: 24px; width: auto">
+    </div>
   </header>
 
   <div style="flex-grow: 1; min-height: 0; display: grid; grid-template-columns: 96px minmax(0, 1fr) 380px">
@@ -95,7 +100,7 @@ html,body{margin:0} #barra{position:sticky;top:0;z-index:10;height:48px;display:
 </div>
 </div></div>
 <script>
-function ajustar(){var e=document.getElementById('escenario'),k=Math.min(1,window.innerWidth/1440);e.style.transform='scale('+k+')';document.getElementById('marco').style.height=(900*k)+'px';}
+function ajustar(){var e=document.getElementById('escenario'),k=Math.min(1,window.innerWidth/1440);e.style.transform='scale('+k+')';document.getElementById('marco').style.height=(e.firstElementChild.offsetHeight*k)+'px';}
 window.addEventListener('resize',ajustar);ajustar();
 </script>
 </body></html>

@@ -117,7 +117,7 @@ html,body{margin:0} #barra{position:sticky;top:0;z-index:10;height:48px;display:
 </div>
 </div></div>
 <script>
-function ajustar(){var e=document.getElementById('escenario'),k=Math.min(1,window.innerWidth/1440);e.style.transform='scale('+k+')';document.getElementById('marco').style.height=(900*k)+'px';}
+function ajustar(){var e=document.getElementById('escenario'),k=Math.min(1,window.innerWidth/1440);e.style.transform='scale('+k+')';document.getElementById('marco').style.height=(e.firstElementChild.offsetHeight*k)+'px';}
 window.addEventListener('resize',ajustar);ajustar();
 </script>
 </body></html>

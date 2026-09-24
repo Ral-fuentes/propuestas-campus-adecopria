@@ -342,7 +342,7 @@
   function fit() {
     const fx = document.getElementById('fx'); if (!fx) return;
     const k = Math.min(1, window.innerWidth / 1440);
-    fx.firstElementChild.style.transform = `scale(${k})`; fx.style.height = (900 * k) + 'px';
+    fx.firstElementChild.style.transform = `scale(${k})`; fx.style.height = (fx.firstElementChild.firstElementChild.offsetHeight * k) + 'px';   // cada portada define su alto
   }
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href="#"]'); if (a) e.preventDefault();
