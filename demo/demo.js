@@ -15,6 +15,7 @@
       'Diseña un plan de mejora aplicado a su puesto de trabajo.'],
     modules: [
       { title: 'Fundamentos de la transformación digital', badge: 'Pionero digital', acts: [
+        { t: 'video', sena: true, title: 'Video de bienvenida del programa (SENA)' },
         { t: 'decl', title: 'Registro inicial: recibido del material' },
         { t: 'read', title: 'Lectura: ¿qué es la transformación digital?' },
         { t: 'video', title: 'Video: la transformación digital en la práctica' },
@@ -63,7 +64,7 @@
   };
 
   // ---------- Estado ----------
-  const KEY = 'demo-adecopria-' + T.id;
+  const KEY = 'demo-adecopria-v2-' + T.id;   // v2: se agregó el video de bienvenida SENA
   const fresh = () => ({ view: 'portada', pol: {}, perfil: null, done: {}, unlockedAt: { 0: Date.now() }, cur: null, live: null, xp: 0,
     badges: [], modal: null, quiz: {}, forum: {}, file: {}, decl: null, rating: 0, aiUsed: false, aiInline: null, seenCourse: false, certSeen: false, tourMin: false });
   let S;
@@ -133,8 +134,11 @@
           <div class="dv-row"><div class="dv-bar" style="flex:1"><span style="width:${pct}%"></span></div><strong>${pct}%</strong></div>
           <p class="dv-muted" style="margin:0">${allDone() ? '¡Formación culminada! Tu certificado está disponible.' : `Módulo ${m + 1} de ${C.modules.length} · plazo hasta el ${fmt(deadline(m))}`}</p>
           <div class="dv-row"><button class="dv-btn dv-btn-pri" data-act="openCourse">${pct ? 'Continuar' : 'Entrar a la formación'}</button>${allDone() ? `<button class="dv-btn" data-act="cert">${ICON.award} Ver certificado</button>` : ''}</div></article>
-        <article class="dv-card dv-stack"><span class="dv-kicker">Próxima sesión en vivo</span><strong>Hora de dudas con el capacitador</strong>
+        <div class="dv-stack"><article class="dv-card dv-stack"><span class="dv-kicker">Próxima sesión en vivo</span><strong>Hora de dudas con el capacitador</strong>
           <span class="dv-muted">${fmt(liveDate())} · 6:00 p. m. · Google Meet</span><button class="dv-btn" data-act="live">${ICON.video} Unirse con Meet</button></article>
+          <article class="dv-card dv-stack" style="gap:8px"><span class="dv-chip dv-chip-ok" style="align-self:flex-start">${ICON.check} Formación gratuita</span>
+            <span style="font-size:14.5px">Las acciones de formación de la convocatoria DSNFT-0001-FCE-2026 son gratuitas para los trabajadores beneficiarios y están cofinanciadas por el SENA. Nadie está autorizado para cobrarlas.</span></article>
+          <article class="dv-card dv-stack" style="gap:6px"><span class="dv-kicker">Centro de Atención al Usuario</span><span style="font-size:14.5px">[correo CAU] · WhatsApp [número]</span><span class="dv-muted" style="font-size:14px">Lun a vie [horario] · Sáb [horario]</span></article></div>
       </div></div>`; },
 
     certificado: () => { const fin = Math.max(...Object.values(S.done)); return `<div class="dv-wrap dv-stack">
@@ -159,7 +163,7 @@
       + (done ? '' : `<div class="dv-row"><button class="dv-btn dv-btn-pri" data-act="complete" ${d}>Marcar como completada</button></div>`);
     if (x.t === 'video') { const playing = S.playing === k;
       body = `<div class="dv-player ${playing ? 'playing' : ''}">${done ? `<span class="dv-okbadge">${ICON.check} Visto</span>` : `<button class="dv-play" data-act="play" ${d} aria-label="Reproducir video" ${playing ? 'disabled' : ''}>${ICON.play}</button>`}<span class="prog"></span></div>
-        <p class="dv-muted" style="margin:0">${playing ? 'Reproduciendo… (simulado)' : 'Recurso educativo digital en HD, con subtítulos en español.'}</p>`; }
+        <p class="dv-muted" style="margin:0">${playing ? 'Reproduciendo… (simulado)' : x.sena ? 'Video oficial del programa, suministrado por el SENA. Es obligatorio al iniciar cada grupo (Anexo 12, numeral 2.8.1).' : 'Recurso educativo digital en HD, con subtítulos en español.'}</p>`; }
     if (x.t === 'quiz') { const ans = S.quiz[k], ok = ans === x.ok;
       body = `<p style="margin:0"><strong>${x.q}</strong></p><div class="dv-stack" style="gap:10px">${x.opts.map((o, i) => `<button class="dv-opt ${ans === i ? (i === x.ok ? 'right' : 'wrong') : ''}" data-act="answer" ${d} data-i="${i}" ${done ? 'disabled' : ''}>${o}</button>`).join('')}</div>`
         + (done || ans === undefined ? '' : ok ? `<div class="dv-okbox">${ICON.check} ¡Correcto! Esta actividad no tiene nota: es para repasar.</div><div class="dv-row"><button class="dv-btn dv-btn-pri" data-act="complete" ${d}>Continuar</button></div>`
@@ -203,6 +207,7 @@
         <div class="dv-row"><button class="dv-btn dv-btn-pri" data-act="close">Cerrar</button></div>`;
     if (md.type === 'about') h = `<span class="dv-kicker">Sobre la formación</span><h2 class="dv-h1">${C.name}</h2>
         <button class="dv-player" data-act="soon" aria-label="Video de presentación del capacitador">${ICON.play}<span style="font-weight:600">Video de presentación del capacitador</span></button>
+        <p style="margin:0"><strong>Video de bienvenida del programa (SENA):</strong> primera actividad del Módulo 1, obligatoria al iniciar cada grupo.</p>
         <p style="margin:0"><strong>Objetivo:</strong> ${C.objetivo}</p><p style="margin:0"><strong>Duración:</strong> ${C.horas} horas · ${C.modules.length} módulos de máximo 8 días hábiles cada uno.</p>
         <div><strong>Resultados de aprendizaje</strong><ul style="margin:6px 0 0;padding-left:20px">${C.resultados.map(r => `<li>${r}</li>`).join('')}</ul></div>
         <div class="dv-row">${['Introducción', 'Índice de contenido', 'Glosario', 'Material complementario', 'Referencias'].map(x => `<button class="dv-chip" style="border:0;cursor:pointer" data-act="soon">${x}</button>`).join('')}</div>
@@ -217,7 +222,7 @@
       { t: 'Autorizaciones del primer ingreso', h: 'Marca las tres autorizaciones que exige el SENA.', done: !!S.pol.at },
       { t: 'Perfil y caracterización', h: 'Elige departamento y escribe el municipio. La caracterización es opcional.', done: !!S.perfil },
       { t: 'Entrar a la formación', h: 'En "Mis formaciones", entra al curso de ejemplo.', done: S.seenCourse },
-      { t: 'Registro inicial y Módulo 1', h: 'Firma el recibido del material y completa las actividades: lectura, video y repaso.', done: modDone(0) },
+      { t: 'Bienvenida SENA y Módulo 1', h: 'Mira el video de bienvenida del SENA, firma el recibido del material y completa las actividades.', done: modDone(0) },
       { t: 'Desbloqueo del Módulo 2', h: 'Al terminar el Módulo 1 se abre el 2 con su plazo. Haz una actividad del Módulo 2.', done: modCount(1) > 0 },
       { t: 'Sesión en vivo', h: 'Pulsa "Unirse con Meet": la asistencia queda registrada.', done: !!S.live },
       { t: 'Asistente con IA', h: 'Pide un resumen del módulo o una explicación.', done: S.aiUsed },
