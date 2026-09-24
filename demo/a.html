@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Demo · Opción A · Aula Google</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo.css">
+<style>
+:root{--bg:#f8fafd;--surface:#fff;--text:#202124;--muted:#5f6368;--border:#dadce0;--border-strong:#9aa0a6;--pri:#1967d2;--pri-ink:#1967d2;--pri-text:#fff;
+  --chip-bg:#e8f0fe;--chip-text:#174ea6;--track:#eef1f4;--input-bg:#fff;--ok:#137333;--ok-bg:#e6f4ea;--warn:#a50e0e;--warn-bg:#fce8e6;--ai-bg:#fef7e0;--ai-text:#3c2a00;
+  --radius:20px;--btn-radius:999px;--font-body:'Figtree',system-ui,sans-serif;--font-display:'Figtree',system-ui,sans-serif}
+.a-top{height:64px;display:flex;align-items:center;gap:18px;padding:0 24px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
+.a-brand{border:0;background:none;font-size:19px;font-weight:800;cursor:pointer;padding:0}
+.a-top nav{display:flex;gap:4px;margin-left:12px}
+.a-top nav button{border:0;background:none;padding:10px 14px;border-radius:999px;font-weight:600;cursor:pointer;color:#3c4043}
+.a-top nav button.on{background:#e8f0fe;color:#174ea6}
+.a-right{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted)}
+.a-right img{height:24px}
+.a-av{width:36px;height:36px;border-radius:50%;background:#e8f0fe;color:#174ea6;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.a-tabs{display:flex;gap:4px;align-items:center;padding:0 24px;background:#fff;border-bottom:1px solid var(--border);overflow-x:auto}
+.a-tabs button{border:0;background:none;padding:16px 14px;font-weight:600;cursor:pointer;color:#3c4043;border-bottom:3px solid transparent;white-space:nowrap}
+.a-tabs button.on{color:#1967d2;border-bottom-color:#1967d2}
+.a-crumb{color:var(--muted);font-weight:600;padding:0 8px;white-space:nowrap}
+.a-course{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}
+.a-banner{position:relative;overflow:hidden;min-height:140px;border-radius:20px;background:#1967d2;color:#fff;padding:24px 28px;display:flex;align-items:flex-end}
+.a-banner i{position:absolute;border-radius:50%}
+.a-banner i:nth-child(1){right:-30px;top:-40px;width:170px;height:170px;background:#4285f4}
+.a-banner i:nth-child(2){right:120px;top:64px;width:84px;height:84px;background:#fbbc04}
+.a-banner i:nth-child(3){right:36px;top:92px;width:54px;height:54px;border-radius:16px;background:#34a853}
+.a-banner div{position:relative;display:flex;flex-direction:column;gap:4px;max-width:70%}
+.a-banner b{font-size:clamp(20px,2.2vw,26px);font-weight:800;letter-spacing:-.3px}
+.a-welcome{display:grid;grid-template-columns:260px minmax(0,1fr);gap:18px;align-items:center}
+.a-vid{cursor:pointer;font-weight:600;font-size:13px}
+.a-pill{border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 14px;font-weight:600;font-size:13px;cursor:pointer}
+.a-mods{padding:0;overflow:hidden}
+.a-mod{width:100%;display:flex;align-items:center;gap:16px;padding:16px 20px;border:0;border-bottom:1px solid #e8eaed;background:#fff;text-align:left;cursor:pointer}
+.a-mod:last-child{border-bottom:0}
+.a-mod.cur{background:#f4f8fe}
+.a-mod.lock{color:var(--muted)}
+.a-mt{flex:1;display:flex;flex-direction:column;gap:6px}
+.a-mt small{font-size:13px}
+.okt{color:#137333;font-weight:700}
+.a-ic{width:40px;height:40px;border-radius:50%;background:#f1f3f4;display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+.a-ic.ok{background:#34a853;color:#fff}.a-ic.pri{background:#1967d2;color:#fff}
+.a-ring{display:flex;align-items:center;gap:16px}
+.a-ring b{font-size:30px;display:block}
+.a-ai{background:#fef7e0;border-color:#f3dc9c}
+.a-ai b{display:inline-flex;align-items:center;gap:8px}
+.a-link{border:0;background:none;padding:0;text-align:left;color:#1967d2;font-weight:600;cursor:pointer}
+.a-act{display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px;align-items:start}
+.a-list{padding:10px;display:flex;flex-direction:column;gap:4px}
+.a-list button{display:flex;gap:10px;align-items:center;text-align:left;border:0;background:none;padding:10px;border-radius:12px;cursor:pointer;font-size:14px;font-weight:600}
+.a-list button.on{background:#e8f0fe;color:#174ea6}
+.a-dot{width:26px;height:26px;border-radius:50%;background:#f1f3f4;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none}
+.a-dot.ok{background:#34a853;color:#fff}.a-dot svg{width:14px;height:14px}
+.a-dl{display:flex;gap:8px;align-items:center;padding:10px;color:#174ea6;font-size:13px;font-weight:600;border-top:1px solid #e8eaed;margin-top:6px}
+.a-dl svg{width:16px;height:16px}
+@media (max-width:980px){.a-course,.a-act{grid-template-columns:1fr}.a-welcome{grid-template-columns:1fr}.a-right span:first-child,.a-right img{display:none}}
+@media (max-width:640px){.a-top{padding:0 14px;gap:10px}.a-brand{font-size:17px}.a-mod{flex-wrap:wrap;padding:14px}.a-mod .dv-bar{width:120px!important}.a-banner{padding:20px}.a-banner div{max-width:100%}.a-banner i:nth-child(2),.a-banner i:nth-child(3){display:none}.a-tabs{padding:0 8px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="dv-toast-host"></div>
+<template id="tpl-portada">
+
+<div style="width: 1440px; height: 900px; box-sizing: border-box; display: flex; flex-direction: column; background: #f8fafd; font-family: 'Figtree', system-ui, sans-serif; color: #202124">
+
+  <header style="height: 72px; box-sizing: border-box; padding: 0 48px; display: flex; align-items: center; gap: 24px; background: #ffffff; border-bottom: 1px solid #dadce0">
+    <div style="width: 150px; height: 40px; border: 1.5px dashed #9aa0a6; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #5f6368">[Logo ADECOPRIA]</div>
+    <div style="font-size: 20px; font-weight: 700; letter-spacing: -0.2px">Campus ADECOPRIA</div>
+    <nav style="display: flex; gap: 28px; margin-left: 32px; font-size: 15px; font-weight: 600">
+      <a href="#" data-act="soon" style="color: #1967d2">Inicio</a>
+      <a href="#" data-act="soon" style="color: #3c4043">Acciones de formación</a>
+      <a href="#" data-act="soon" style="color: #3c4043">Ayuda</a>
+    </nav>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 10px; font-size: 12px; color: #5f6368">
+      <span>Operado por</span>
+      <img src="../logo.png" alt="Grupo AE Advanced Education" style="height: 26px; width: auto">
+    </div>
+  </header>
+
+  <main style="flex-grow: 1; box-sizing: border-box; padding: 48px 48px 32px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px">
+    <section style="display: flex; flex-direction: column; gap: 24px; padding-top: 12px">
+      <div style="display: flex; gap: 6px">
+        <span style="width: 40px; height: 6px; border-radius: 3px; background: #4285f4"></span>
+        <span style="width: 40px; height: 6px; border-radius: 3px; background: #ea4335"></span>
+        <span style="width: 40px; height: 6px; border-radius: 3px; background: #fbbc04"></span>
+        <span style="width: 40px; height: 6px; border-radius: 3px; background: #34a853"></span>
+      </div>
+      <div style="font-size: 14px; font-weight: 700; color: #1967d2; letter-spacing: 0.4px; text-transform: uppercase">Formación Continua Especializada · SENA 2026</div>
+      <h1 style="margin: 0; font-size: 54px; line-height: 1.06; font-weight: 800; letter-spacing: -1.4px; max-width: 640px">Aprende con las herramientas que ya usas cada día</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #3c4043; max-width: 580px">Tus módulos, clases en vivo por Meet, grabaciones en Drive y un asistente con IA, en un solo lugar. Entra con tu cuenta de Google y sigue tu avance desde el computador o el celular.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; max-width: 620px">
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: #e8f0fe; color: #174ea6; font-size: 14px; font-weight: 600">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"></rect><path d="M16 10l5-3v10l-5-3"></path></svg>Clases en vivo por Meet</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: #e6f4ea; color: #137333; font-size: 14px; font-weight: 600">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Grabaciones en Drive</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: #fef7e0; color: #8a5a00; font-size: 14px; font-weight: 600">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Asistente con IA</span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: #fce8e6; color: #a50e0e; font-size: 14px; font-weight: 600">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>Desde el celular</span>
+      </div>
+
+      <div style="margin-top: 20px; font-size: 13px; font-weight: 700; color: #5f6368; text-transform: uppercase; letter-spacing: 0.4px">Acciones de formación abiertas</div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+        <a href="#" data-act="login" style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #ffffff; border: 1px solid #dadce0; border-radius: 16px; border-top: 6px solid #4285f4; color: #202124; text-decoration: none">
+          <span style="font-size: 16px; font-weight: 700; line-height: 1.3">[Acción de formación 1]</span>
+          <span style="font-size: 13px; color: #5f6368">Virtual · [40] horas</span>
+        </a>
+        <a href="#" data-act="login" style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #ffffff; border: 1px solid #dadce0; border-radius: 16px; border-top: 6px solid #34a853; color: #202124; text-decoration: none">
+          <span style="font-size: 16px; font-weight: 700; line-height: 1.3">[Acción de formación 2]</span>
+          <span style="font-size: 13px; color: #5f6368">PAT · [24] horas</span>
+        </a>
+        <a href="#" data-act="login" style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #ffffff; border: 1px solid #dadce0; border-radius: 16px; border-top: 6px solid #fbbc04; color: #202124; text-decoration: none">
+          <span style="font-size: 16px; font-weight: 700; line-height: 1.3">[Acción de formación 3]</span>
+          <span style="font-size: 13px; color: #5f6368">Híbrida · [16] horas</span>
+        </a>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; justify-content: center">
+      <form style="box-sizing: border-box; padding: 40px; background: #ffffff; border: 1px solid #dadce0; border-radius: 28px; box-shadow: 0 1px 3px rgba(60,64,67,0.15), 0 4px 16px rgba(60,64,67,0.08); display: flex; flex-direction: column; gap: 18px">
+        <div style="font-size: 28px; font-weight: 700; letter-spacing: -0.4px">Ingresa a tu formación</div>
+        <div style="font-size: 15px; color: #5f6368; margin-top: -8px">Usa tu cuenta de Google o tu número de documento.</div>
+        <button type="button" data-act="google" style="height: 52px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #ffffff; border: 1px solid #747775; border-radius: 999px; font-family: inherit; font-size: 16px; font-weight: 600; color: #1f1f1f; cursor: pointer">
+          <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
+          Continuar con Google
+        </button>
+        <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; color: #5f6368">
+          <span style="flex-grow: 1; height: 1px; background: #dadce0"></span>o<span style="flex-grow: 1; height: 1px; background: #dadce0"></span>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #3c4043">Número de documento
+          <input type="text" placeholder="Ej. 1023456789" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1px solid #747775; border-radius: 12px; font-family: inherit; font-size: 16px">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #3c4043">Contraseña
+          <input type="password" style="height: 50px; box-sizing: border-box; padding: 0 16px; border: 1px solid #747775; border-radius: 12px; font-family: inherit; font-size: 16px">
+        </label>
+        <button type="button" data-act="login" style="height: 52px; background: #1967d2; color: #ffffff; border: none; border-radius: 999px; font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer">Ingresar</button>
+        <a href="#" data-act="soon" style="align-self: center; font-size: 14px; font-weight: 600">¿Olvidaste tu contraseña?</a>
+        <p style="margin: 4px 0 0; font-size: 12.5px; line-height: 1.5; color: #5f6368">En tu primer ingreso aceptarás la política de tratamiento de datos, la autorización de uso de imagen y la declaración de gratuidad de la formación.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer style="height: 64px; box-sizing: border-box; padding: 0 48px; display: flex; align-items: center; gap: 28px; background: #ffffff; border-top: 1px solid #dadce0; font-size: 13.5px; color: #3c4043">
+    <span style="display: inline-flex; align-items: center; gap: 8px; font-weight: 600">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.7M12 17h.01"></path></svg>
+      Centro de Atención al Usuario · [correo CAU] · [teléfono]</span>
+    <a href="#" data-act="soon">Política de tratamiento de datos</a>
+    <a href="#" data-act="soon">Manual de usuario</a>
+    <div style="margin-left: auto; height: 40px; padding: 0 16px; border: 1.5px dashed #9aa0a6; border-radius: 8px; display: flex; align-items: center; font-size: 12px; font-weight: 600; color: #5f6368">[Cobranding SENA · pendiente de aprobación]</div>
+  </footer>
+</div>
+</template>
+<script>
+window.THEME = {
+  id: 'a', name: 'Opción A · Aula Google', activityView: 'actividad',
+  chrome: (c, inner) => `<header class="a-top"><span class="dv-ph">[Logo ADECOPRIA]</span><button class="a-brand" data-act="go" data-to="inicio">Campus ADECOPRIA</button>
+    <nav><button data-act="go" data-to="inicio" class="${c.S.view === 'inicio' ? 'on' : ''}">Mis formaciones</button><button data-act="soon">Ayuda</button></nav>
+    <div class="a-right"><span>Operado por</span><img src="../logo.png" alt="Grupo AE Advanced Education"><span class="a-av">${c.U.nombres[0]}${c.U.apellidos[0]}</span></div></header><main>${inner}</main>`,
+  views: {
+    curso: c => {
+      const { S, C, ICON } = c, pct = c.progress();
+      const mods = C.modules.map((mo, i) => {
+        const n = c.modCount(i), tot = mo.acts.length;
+        if (c.modDone(i)) return `<button class="a-mod" data-act="openModule" data-m="${i}"><span class="a-ic ok">${ICON.check}</span><span class="a-mt"><b>Módulo ${i + 1} · ${mo.title}</b><small class="okt">Completado</small></span></button>`;
+        if (c.unlocked(i)) return `<button class="a-mod cur" data-act="openModule" data-m="${i}"><span class="a-ic pri">${i + 1}</span><span class="a-mt"><b>Módulo ${i + 1} · ${mo.title}</b><span class="dv-row" style="gap:10px"><span class="dv-bar" style="width:200px"><span style="width:${n / tot * 100}%"></span></span><small>${n} de ${tot} actividades</small></span></span><span class="dv-chip">Quedan ${c.daysLeft(i)} días hábiles</span></button>`;
+        return `<button class="a-mod lock" data-act="openModule" data-m="${i}"><span class="a-ic">${ICON.lock}</span><span class="a-mt"><b>Módulo ${i + 1} · ${mo.title}</b><small>Se habilita al completar el Módulo ${i}</small></span></button>`;
+      }).join('');
+      return `<div class="a-tabs"><button class="on">Inicio del curso</button><button data-act="openModule" data-m="${c.currentModule()}">Módulos</button><button data-act="live">Sesiones en vivo</button><button data-act="soon">Calificaciones</button><button data-act="soon">Personas</button></div>
+      <div class="dv-wrap a-course"><section class="dv-stack">
+        <div class="a-banner"><i></i><i></i><i></i><div><b>${C.name}</b><span>Código ${C.code} · Grupo ${C.group} · ${C.modalidad} · ${C.horas} horas</span></div></div>
+        <div class="dv-card a-welcome"><button class="dv-player a-vid" data-act="about" aria-label="Ver video de presentación del capacitador">${ICON.play}<span>Video de presentación del capacitador</span></button>
+          <div class="dv-stack" style="gap:10px"><div class="dv-h2">Bienvenida</div><p style="margin:0"><b>Objetivo:</b> ${C.objetivo}</p>
+          <p class="dv-muted" style="margin:0">Avanza módulo a módulo: cada uno se habilita al completar el anterior y tienes hasta 8 días hábiles para terminarlo.</p>
+          <div class="dv-row"><button class="a-pill" data-act="about">Introducción</button><button class="a-pill" data-act="about">Resultados de aprendizaje</button><button class="a-pill" data-act="about">Índice</button></div></div></div>
+        <div class="dv-kicker" style="color:#5f6368">Módulos</div><div class="dv-card a-mods">${mods}</div></section>
+      <aside class="dv-stack">
+        <div class="dv-card a-ring"><svg viewBox="0 0 84 84" width="84" height="84" aria-hidden="true"><circle cx="42" cy="42" r="34" fill="none" stroke="#e8eaed" stroke-width="10"/><circle cx="42" cy="42" r="34" fill="none" stroke="#1967d2" stroke-width="10" stroke-linecap="round" stroke-dasharray="${(2.136 * pct).toFixed(1)} 214" transform="rotate(-90 42 42)"/></svg><div><b>${pct}%</b><span class="dv-muted">Tu avance en la formación</span></div></div>
+        ${c.allDone() ? `<div class="dv-card dv-stack"><b>¡Formación culminada!</b><button class="dv-btn dv-btn-pri" data-act="cert">${ICON.award} Ver certificado</button></div>` : ''}
+        <div class="dv-card dv-stack"><span class="dv-kicker" style="color:#5f6368">Próxima sesión en vivo</span><b>Hora de dudas con el capacitador</b><span class="dv-muted">${c.fmt(c.liveDate())} · 6:00 p. m. · 60 min</span>
+          <button class="dv-btn dv-btn-pri" data-act="live">${ICON.video} Unirse con Meet</button>${S.live ? '<button class="a-link" data-act="live">Asistencia registrada · ver grabación en Drive</button>' : ''}</div>
+        <div class="dv-card dv-stack a-ai"><b>${ICON.spark} Asistente con IA</b><div class="dv-row"><button class="dv-btn" data-act="ai" data-kind="resumen">Resumir el módulo</button><button class="dv-btn" data-act="ai" data-kind="explicar">Explicar un concepto</button></div></div>
+        <div class="dv-card dv-stack"><span class="dv-kicker" style="color:#5f6368">Recursos</span><button class="a-link" data-act="soon">Glosario</button><button class="a-link" data-act="soon">Material complementario</button><button class="a-link" data-act="soon">Referencias bibliográficas</button></div>
+      </aside></div>`;
+    },
+    actividad: c => {
+      const { S, C, ICON } = c, m = S.cur.m, a = S.cur.a, mo = C.modules[m];
+      return `<div class="a-tabs"><button data-act="openCourse">${ICON.left} Inicio del curso</button><span class="a-crumb">Módulo ${m + 1} · ${mo.title}</span></div>
+      <div class="dv-wrap a-act"><nav class="dv-card a-list" aria-label="Actividades del módulo">${mo.acts.map((x, i) => `<button class="${i === a ? 'on' : ''}" data-act="openAct" data-m="${m}" data-a="${i}"><span class="a-dot ${c.isDone(m, i) ? 'ok' : ''}">${c.isDone(m, i) ? ICON.check : i + 1}</span>${x.title}</button>`).join('')}
+        <div class="a-dl">${ICON.clock} Plazo del módulo: ${c.fmt(c.deadline(m))}</div></nav>
+      <section class="dv-card">${c.activity(m, a)}</section></div>`;
+    }
+  }
+};
+</script>
+<script src="demo.js"></script>
+</body>
+</html>

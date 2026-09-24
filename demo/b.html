@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Demo · Opción B · Ruta AE</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="demo.css">
+<style>
+:root{--bg:#f2f3f7;--surface:#fff;--text:#1d2125;--muted:#5b6570;--border:#e3e7eb;--border-strong:#c9d1d9;--pri:#d6004f;--pri-ink:#b8004a;--pri-text:#fff;
+  --chip-bg:#fff0f5;--chip-text:#9e003f;--track:#eceef3;--input-bg:#fff;--ok:#0f6b36;--ok-bg:#e3f5ea;--warn:#9e003f;--warn-bg:#fff0f5;--ai-bg:#0b2940;--ai-text:#e8eef4;
+  --radius:22px;--btn-radius:14px;--font-body:'Fira Sans',system-ui,sans-serif;--font-display:'Poppins',system-ui,sans-serif}
+.b-top{min-height:64px;display:flex;align-items:center;gap:16px;padding:0 24px;background:#0b2940;color:#fff;position:sticky;top:0;z-index:20}
+.b-top .dv-ph{color:#c7d4df;border-color:#7f98ad}
+.b-brand{border:0;background:none;color:#fff;font-family:Poppins,sans-serif;font-size:18px;font-weight:700;cursor:pointer;padding:0}
+.b-top nav button{border:0;background:none;color:#c7d4df;font-weight:600;padding:10px 12px;border-radius:10px;cursor:pointer}
+.b-top nav button.on{color:#fff;background:#173b57}
+.b-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.b-xp{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#173b57;font-weight:600;font-size:14px}
+.b-xp svg{width:18px;height:18px;color:#fdc300}
+.b-av{width:36px;height:36px;border-radius:50%;background:#ff0061;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.b-band{background:#0b2940;color:#fff;padding:22px 24px 30px}
+.b-band .in{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.b-title{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.b-title b{font-family:Poppins,sans-serif;font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.5px;display:block}
+.b-title span{color:#c7d4df;font-size:14px}
+.b-pct{font-family:Poppins,sans-serif;font-weight:700;color:#ffd1e0}
+.b-trail{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:start}
+.b-trail .line{position:absolute;left:8%;right:8%;top:27px;height:6px;border-radius:3px;background:#2c5474}
+.b-trail .fill{position:absolute;left:8%;top:27px;height:6px;border-radius:3px;background:#ff0061;transition:width .5s}
+.b-node{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;border:0;background:none;color:#fff;cursor:pointer;font-size:13.5px;font-weight:600;text-align:center;padding:0 4px}
+.b-node .c{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#173b57;border:3px solid #2c5474;color:#9fb3c4;font-family:Poppins,sans-serif;font-weight:800;font-size:20px}
+.b-node.ok .c{background:#ff0061;border-color:#ff0061;color:#fff}
+.b-node.cur .c{background:#0b2940;border:5px solid #ff0061;color:#fff;box-shadow:0 0 0 7px rgba(255,0,97,.25)}
+.b-node.cert .c{border-color:#fdc300;color:#fdc300}
+.b-node.cert.ok .c{background:#fdc300;color:#0b2940}
+.b-node.lock{color:#b3c3d1}
+.b-node .c svg{width:24px;height:24px}
+.b-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:22px;align-items:start}
+.b-acts{display:flex;flex-direction:column;gap:10px}
+.b-act{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;background:#f7f8fa;border:2px solid transparent;text-align:left;cursor:pointer;font-weight:600;font-size:15.5px;width:100%}
+.b-act.next{background:#fff0f5;border-color:#ff0061}
+.b-act .d{width:32px;height:32px;border-radius:50%;border:3px solid #c9d1d9;display:flex;align-items:center;justify-content:center;flex:none;color:#fff}
+.b-act.ok .d{background:#0f7a3d;border-color:#0f7a3d}
+.b-act.next .d{border-color:#ff0061}
+.b-act .d svg{width:16px;height:16px}
+.b-act .s{margin-left:auto;font-size:13px;font-weight:700;color:#0f6b36}
+.b-act.next .s{color:#9e003f}
+.b-badges{display:flex;gap:10px;flex-wrap:wrap}
+.b-badge{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;border:2px dashed #c9d1d9;color:#9aa5b1}
+.b-badge.on{border:0;background:#ff0061;color:#fff}
+.b-badge.on:nth-child(2n){background:#0b2940;color:#fdc300}
+.b-badge svg{width:26px;height:26px}
+.b-live{background:#0b2940;color:#fff;border:0}
+.b-live .dv-muted{color:#c7d4df}
+.b-link{border:0;background:none;padding:0;text-align:left;color:#b8004a;font-weight:600;cursor:pointer}
+.b-back{border:0;background:none;color:#c7d4df;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;padding:0}
+.b-back svg{width:18px;height:18px}
+@media (max-width:980px){.b-grid{grid-template-columns:1fr}.b-node{font-size:11.5px}.b-node .c{width:44px;height:44px;font-size:16px}.b-trail .line,.b-trail .fill{top:19px}.b-top .dv-ph{display:none}}
+@media (max-width:640px){.b-top{padding:0 14px;gap:10px}.b-brand{font-size:16px}.b-xp{padding:6px 10px;font-size:12.5px}.b-band{padding:18px 12px 22px}.b-node{font-size:10.5px;padding:0 1px}.b-node .c{width:38px;height:38px;font-size:15px;border-width:2px}.b-node.cur .c{border-width:4px;box-shadow:0 0 0 4px rgba(255,0,97,.25)}.b-node .c svg{width:18px;height:18px}.b-trail .line,.b-trail .fill{top:17px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="dv-toast-host"></div>
+<template id="tpl-portada">
+
+<div style="width: 1440px; height: 900px; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) 560px; font-family: 'Fira Sans', system-ui, sans-serif">
+
+  <section style="box-sizing: border-box; padding: 40px 56px; background: #0b2940; color: #ffffff; display: flex; flex-direction: column; gap: 22px; position: relative; overflow: hidden">
+    <div style="display: flex; align-items: center; gap: 18px">
+      <div style="width: 150px; height: 40px; border: 1.5px dashed #7f98ad; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #c7d4df">[Logo ADECOPRIA]</div>
+      <span style="font-family: 'Poppins', sans-serif; font-size: 19px; font-weight: 700">Campus ADECOPRIA</span>
+    </div>
+
+    <div style="margin-top: 36px; display: inline-flex; align-self: flex-start; padding: 7px 14px; border-radius: 999px; background: #173b57; font-size: 13px; font-weight: 600; color: #ffd1e0; letter-spacing: 0.3px">Formación Continua Especializada · SENA 2026</div>
+    <h1 style="margin: 0; font-family: 'Poppins', sans-serif; font-size: 56px; line-height: 1.05; font-weight: 800; letter-spacing: -1.5px; max-width: 620px">Tu ruta de formación, <span style="color: #ff0061">paso a paso.</span></h1>
+    <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #d5e0ea; max-width: 520px">Cada módulo se desbloquea cuando terminas el anterior. Gana insignias mientras avanzas y descarga tu certificado al culminar.</p>
+
+    <svg width="760" height="300" viewBox="0 0 760 300" style="margin-top: 8px" aria-hidden="true">
+      <path d="M40 250 C 160 250, 170 150, 280 150 S 420 230, 520 150 S 640 60, 720 60" fill="none" stroke="#2c5474" stroke-width="10" stroke-linecap="round"></path>
+      <path d="M40 250 C 160 250, 170 150, 280 150 S 360 190, 400 196" fill="none" stroke="#ff0061" stroke-width="10" stroke-linecap="round"></path>
+      <circle cx="40" cy="250" r="26" fill="#ff0061"></circle>
+      <path d="M29 250l8 8 15-16" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+      <circle cx="280" cy="150" r="26" fill="#ff0061"></circle>
+      <path d="M269 150l8 8 15-16" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+      <circle cx="400" cy="196" r="34" fill="#0b2940" stroke="#ff0061" stroke-width="6"></circle>
+      <text x="400" y="205" text-anchor="middle" font-family="Poppins, sans-serif" font-size="24" font-weight="800" fill="#ffffff">3</text>
+      <circle cx="560" cy="126" r="26" fill="#173b57" stroke="#2c5474" stroke-width="4"></circle>
+      <rect x="551" y="124" width="18" height="13" rx="2" fill="none" stroke="#7f98ad" stroke-width="3"></rect>
+      <path d="M555 124v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#7f98ad" stroke-width="3"></path>
+      <circle cx="720" cy="60" r="30" fill="#173b57" stroke="#fdc300" stroke-width="4"></circle>
+      <circle cx="720" cy="54" r="10" fill="none" stroke="#fdc300" stroke-width="3"></circle>
+      <path d="M714 63l-3 14 9-5 9 5-3-14" fill="none" stroke="#fdc300" stroke-width="3" stroke-linejoin="round"></path>
+    </svg>
+
+    <div style="margin-top: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 16px; background: #123452">
+        <span style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700">Módulos secuenciales</span>
+        <span style="font-size: 13.5px; line-height: 1.45; color: #c7d4df">Hasta 8 días hábiles por módulo, a tu ritmo.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 16px; background: #123452">
+        <span style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700">Insignias y niveles</span>
+        <span style="font-size: 13.5px; line-height: 1.45; color: #c7d4df">Cada actividad suma a tu progreso.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 16px; background: #123452">
+        <span style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700">Certificado al culminar</span>
+        <span style="font-size: 13.5px; line-height: 1.45; color: #c7d4df">Descárgalo desde la plataforma.</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="box-sizing: border-box; padding: 40px 56px; background: #ffffff; display: flex; flex-direction: column">
+    <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; font-size: 12px; color: #5b6570">
+      <span>Operado por</span>
+      <img src="../logo.png" alt="Grupo AE Advanced Education" style="height: 26px; width: auto">
+    </div>
+    <form style="margin: auto 0; display: flex; flex-direction: column; gap: 18px">
+      <div style="font-family: 'Poppins', sans-serif; font-size: 30px; font-weight: 700; color: #0b2940; letter-spacing: -0.5px">Continúa tu ruta</div>
+      <div style="font-size: 15.5px; color: #5b6570; margin-top: -8px">Ingresa con tu número de documento.</div>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #1d2125">Número de documento
+        <input type="text" placeholder="Ej. 1023456789" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #c9d1d9; border-radius: 14px; font-family: inherit; font-size: 16px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #1d2125">Contraseña
+        <input type="password" style="height: 52px; box-sizing: border-box; padding: 0 16px; border: 1.5px solid #c9d1d9; border-radius: 14px; font-family: inherit; font-size: 16px">
+      </label>
+      <button type="button" data-act="login" style="height: 54px; border: none; border-radius: 14px; background: #d6004f; color: #ffffff; font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer">Ingresar</button>
+      <button type="button" data-act="google" style="height: 52px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #ffffff; border: 1.5px solid #c9d1d9; border-radius: 14px; font-family: inherit; font-size: 15.5px; font-weight: 600; color: #1f1f1f; cursor: pointer">
+        <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path></svg>
+        Continuar con Google
+      </button>
+      <a href="#" data-act="soon" style="align-self: center; font-size: 14px; font-weight: 600">¿Olvidaste tu contraseña?</a>
+      <p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: #5b6570">En tu primer ingreso aceptarás la política de tratamiento de datos, la autorización de uso de imagen y la declaración de gratuidad de la formación.</p>
+    </form>
+    <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 1px solid #e3e7eb; font-size: 13px; color: #3d4852">
+      <span style="font-weight: 600">¿Necesitas ayuda? CAU · [correo CAU] · [teléfono]</span>
+      <div style="display: flex; gap: 18px; align-items: center">
+        <a href="#" data-act="soon">Política de datos</a>
+        <a href="#" data-act="soon">Manual de usuario</a>
+        <div style="margin-left: auto; height: 34px; padding: 0 12px; border: 1.5px dashed #9aa5b1; border-radius: 8px; display: flex; align-items: center; font-size: 11.5px; font-weight: 600; color: #5b6570">[Cobranding SENA · pendiente]</div>
+      </div>
+    </div>
+  </section>
+</div>
+</template>
+<script>
+window.THEME = {
+  id: 'b', name: 'Opción B · Ruta AE', activityView: 'actividad', badges: true,
+  afterComplete: () => null,   // tras cada actividad se vuelve a la ruta
+  chrome: (c, inner) => `<header class="b-top"><span class="dv-ph">[Logo ADECOPRIA]</span><button class="b-brand" data-act="go" data-to="inicio">Campus ADECOPRIA</button>
+    <nav><button data-act="go" data-to="inicio" class="${c.S.view === 'inicio' ? 'on' : ''}">Mis formaciones</button></nav>
+    <div class="b-right"><span class="b-xp">${c.ICON.award}Nivel ${c.level()} · ${c.S.xp} XP</span><span class="b-av">${c.U.nombres[0]}${c.U.apellidos[0]}</span></div></header><main>${inner}</main>`,
+  views: {
+    curso: c => {
+      const { S, C, ICON } = c, pct = c.progress(), cm = c.currentModule(), done = c.allDone();
+      const nodes = [`<button class="b-node ok" data-act="about"><span class="c">${ICON.check}</span>Bienvenida</button>`].concat(C.modules.map((mo, i) => {
+        const cls = c.modDone(i) ? 'ok' : c.unlocked(i) ? 'cur' : 'lock';
+        return `<button class="b-node ${cls}" data-act="openModule" data-m="${i}"><span class="c">${cls === 'ok' ? ICON.check : cls === 'lock' ? ICON.lock : i + 1}</span>Módulo ${i + 1}${cls === 'cur' ? ' · en curso' : ''}</button>`;
+      }), [`<button class="b-node cert ${done ? 'ok' : ''}" data-act="cert"><span class="c">${ICON.award}</span>Certificado</button>`]).join('');
+      const fillPct = Math.min(84, (1 + C.modules.filter((x, i) => c.modDone(i)).length) / 5 * 84);
+      const mo = C.modules[cm], nxt = mo.acts.findIndex((x, a) => !c.isDone(cm, a));
+      const acts = mo.acts.map((x, a) => { const ok = c.isDone(cm, a), nx = a === nxt;
+        return `<button class="b-act ${ok ? 'ok' : ''} ${nx ? 'next' : ''}" data-act="openAct" data-m="${cm}" data-a="${a}"><span class="d">${ok ? ICON.check : ''}</span>${x.title}<span class="s">${ok ? 'Completada' : nx ? 'Continuar ›' : ''}</span></button>`; }).join('');
+      return `<section class="b-band"><div class="in">
+        <div class="b-title"><div><b>${C.name}</b><span>Código ${C.code} · Grupo ${C.group} · ${C.modalidad} · ${C.horas} horas</span></div><span class="b-pct">${pct}% completado</span></div>
+        <div class="b-trail"><span class="line"></span><span class="fill" style="width:${fillPct}%"></span>${nodes}</div></div></section>
+      <div class="dv-wrap b-grid">
+        <section class="dv-card dv-stack">
+          ${done ? `<div class="dv-celebrate">${ICON.award}</div><h1 class="dv-h1">¡Llegaste a la meta!</h1><p style="margin:0">Completaste los ${C.modules.length} módulos. Descarga tu constancia.</p><div class="dv-row"><button class="dv-btn dv-btn-pri" data-act="cert">${ICON.award} Ver certificado</button></div>`
+          : `<div class="dv-row" style="justify-content:space-between"><h1 class="dv-h1" style="font-size:24px">Módulo ${cm + 1} · ${mo.title}</h1><span class="dv-chip">${ICON.clock} Te quedan ${c.daysLeft(cm)} días hábiles</span></div>
+          <div class="dv-row"><div class="dv-bar" style="flex:1"><span style="width:${c.modCount(cm) / mo.acts.length * 100}%"></span></div><span class="dv-muted" style="font-weight:600">${c.modCount(cm)} de ${mo.acts.length} actividades</span></div>
+          <div class="b-acts">${acts}</div>`}
+        </section>
+        <aside class="dv-stack">
+          <div class="dv-card dv-stack"><span class="dv-h2">Tus insignias</span><div class="b-badges">${C.modules.map((mo, i) => `<span class="b-badge ${S.badges.includes(i) ? 'on' : ''}" title="${mo.badge}">${S.badges.includes(i) ? ICON.award : ICON.lock}</span>`).join('')}</div>
+            <span class="dv-muted" style="font-size:14px">${S.badges.length ? 'Última: ' + C.modules[S.badges[S.badges.length - 1]].badge : 'Completa un módulo para ganar tu primera insignia.'}</span></div>
+          <div class="dv-card dv-stack b-live"><span class="dv-kicker" style="color:#ffd1e0">Sesión en vivo</span><span class="dv-h2">Hora de dudas con el capacitador</span><span class="dv-muted">${c.fmt(c.liveDate())} · 6:00 p. m. · Google Meet</span>
+            <button class="dv-btn dv-btn-pri" data-act="live">${S.live ? 'Asistencia registrada · ver grabación' : 'Unirme a la sesión'}</button></div>
+          <div class="dv-card dv-stack"><span class="dv-h2">${ICON.spark} Asistente con IA</span><div class="dv-row"><button class="dv-btn" data-act="ai" data-kind="resumen">Resumir el módulo</button><button class="dv-btn" data-act="ai" data-kind="explicar">Explicar</button></div></div>
+          <div class="dv-card dv-stack"><span class="dv-h2">Sobre la formación</span><button class="b-link" data-act="about">Video del capacitador, objetivo y resultados</button><button class="b-link" data-act="soon">Glosario · Referencias · Material complementario</button></div>
+        </aside></div>`;
+    },
+    actividad: c => {
+      const { S, C, ICON } = c, m = S.cur.m, a = S.cur.a, mo = C.modules[m];
+      return `<section class="b-band" style="padding-bottom:22px"><div class="in"><button class="b-back" data-act="openCourse">${ICON.left} Volver a mi ruta</button>
+        <div class="b-title"><div><b style="font-size:22px">Módulo ${m + 1} · ${mo.title}</b><span>Actividad ${a + 1} de ${mo.acts.length} · plazo hasta el ${c.fmt(c.deadline(m))}</span></div><span class="b-pct">${c.progress()}% completado</span></div></div></section>
+      <div class="dv-wrap b-grid"><section class="dv-card">${c.activity(m, a)}</section>
+        <aside class="dv-card dv-stack"><span class="dv-h2">Actividades del módulo</span><div class="b-acts">${mo.acts.map((x, i) => `<button class="b-act ${c.isDone(m, i) ? 'ok' : ''} ${i === a ? 'next' : ''}" data-act="openAct" data-m="${m}" data-a="${i}"><span class="d">${c.isDone(m, i) ? ICON.check : ''}</span>${x.title}</button>`).join('')}</div></aside></div>`;
+    }
+  }
+};
+</script>
+<script src="demo.js"></script>
+</body>
+</html>
